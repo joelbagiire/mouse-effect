@@ -1,0 +1,45 @@
+$primary-color: #000;
+$secondary-color: #fff;
+$cursor-color:#00ff00;
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: $primary-color;
+    cursor: none;
+    overflow: hidden;
+}
+h1{
+    font-size: 6em;
+    color: $secondary-color;
+    font-weight: 900;
+}
+#cursor{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: $cursor-color;
+    border-radius: 50%;
+    transform: translate(-50% -50%);
+    transition: .1s;
+}
+h1:hover ~ #cursor{
+    height: 90px;
+    width: 90px;
+    background: transparent;
+    border: 3px dotted $cursor-color;
+    animation-name: rotation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+@keyframes rotation{
+    0%{
+        transform: rotate(360deg);
+    }
+}
